@@ -1,0 +1,148 @@
+/* Background */
+.dashboard-container {
+    background: linear-gradient(to bottom right, #f0f0f0, #d9d9d9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px var(--box-shadow);
+}
+
+:root {
+    --primary-color: #004d99; 
+    --secondary-color: #555;
+    --background-color: #e6e6e6;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --box-shadow: rgba(0, 0, 0, 0.2);
+    --hover-box-shadow: rgba(0, 0, 0, 0.3);
+    --transition-duration: 0.3s;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Dashboard container */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Header Section */
+header {
+    background: linear-gradient(135deg, #004d99, #008cba);
+    padding: 20px 0;
+    color: white;
+    border-radius: 8px;
+}
+
+header h1 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+/* Navigation Bar */
+.menu-bar {
+    background-color: white;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px var(--box-shadow);
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.menu-bar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+}
+
+.menu-bar a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 18px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.menu-bar a:hover {
+    transform: scale(1.1);
+}
+
+/* Dashboard Section */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 6px 12px var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--hover-box-shadow);
+}
+
+.dashboard-card i {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.dashboard-card h2 {
+    font-size: 18px;
+    margin: 5px 0;
+    color: var(--primary-color);
+}
+
+.dashboard-card p {
+    font-size: 12px;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
+    .menu-bar a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+    .menu-bar a {
+        font-size: 14px;
+    }
+}
