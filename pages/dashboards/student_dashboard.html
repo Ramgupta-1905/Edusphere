@@ -3,110 +3,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Dashboard</title>
+    <title>Edusphere | Student Dashboard</title>
+
     <link rel="stylesheet" href="../../assets/css/student_dashboard.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
-    <!-- Main Dashboard -->
-    <main class="dashboard-container">
-        <!-- Header Section -->
-        <header>
-            <h1>Student Dashboard</h1>
-            <p>Welcome to your personalized student portal. Access resources, assignments, and academic insights easily.</p>
-        </header>
 
-        <!-- Secondary Navigation Menu -->
-        <nav class="menu-bar">
-            <ul>
-                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="../grids/profile.html"><i class="fas fa-user"></i> Profile</a></li>
-                <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
-            </ul>
-        </nav>
+<header class="top-header">
 
-        <!-- Dashboard Grid Section -->
-        <section class="dashboard-grid" aria-label="Dashboard Sections">
-            <article class="dashboard-card card-blue">
-                <a href="../grids/attendance.html">
-                    <i class="fas fa-clock"></i>
-                    <h2>Attendance</h2>
-                    <p>Track and manage your class attendance seamlessly.</p>
-                </a>
-            </article>
-            <article class="dashboard-card card-green">
-                <a href="#syllabus">
-                    <i class="fas fa-book-open"></i>
-                    <h2>Syllabus</h2>
-                    <p>Download course materials and study guides.</p>
-                </a>
-            </article>
-            <article class="dashboard-card card-yellow">
-                <a href="#timetable">
-                    <i class="fas fa-table"></i>
-                    <h2>Timetable</h2>
-                    <p>View your weekly class schedule instantly.</p>
-                </a>
-            </article>
-            <article class="dashboard-card card-lime">
-                <a href="#assignments">
-                    <i class="fas fa-tasks"></i>
-                    <h2>Assignments</h2>
-                    <p>Submit assignments and track completion.</p>
-                </a>
-            </article>
-            <article class="dashboard-card card-purple">
-                <a href="../grids/results.html">
-                    <i class="fas fa-medal"></i>
-                    <h2>Results</h2>
-                    <p>Review your semester scores and grades.</p>
-                </a>
-            </article>
-            <article class="dashboard-card card-cyan">
-                <a href="#question-papers">
-                    <i class="fas fa-file-pdf"></i>
-                    <h2>Question Papers</h2>
-                    <p>Access previous exam papers for practice.</p>
-                </a>
-            </article>
-            <article class="dashboard-card card-teal">
-                <a href="#events">
-                    <i class="fas fa-star"></i>
-                    <h2>Events</h2>
-                    <p>Discover college events and workshops.</p>
-                </a>
-            </article>
-            <article class="dashboard-card card-gray">
-                <a href="#support">
-                    <i class="fas fa-headset"></i>
-                    <h2>Support</h2>
-                    <p>Connect with academic advisors anytime.</p>
-                </a>
-            </article>
-            <article class="dashboard-card card-coral">
-                <a href="#notifications">
-                    <i class="fas fa-envelope"></i>
-                    <h2>Notifications</h2>
-                    <p>Get important college announcements.</p>
-                </a>
-            </article>
-            <article class="dashboard-card card-amber">
-                <a href="#calendar">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h2>Calendar</h2>
-                    <p>Plan your semester with key dates.</p>
-                </a>
-            </article>
-            <article class="dashboard-card card-indigo">
-                <a href="../grids/company_visit.html">
-                    <i class="fas fa-building"></i>
-                    <h2>Companies</h2>
-                    <p>Explore company visits and job opportunities.</p>
-                </a>
-            </article>
-        </section>
-    </main>
+    <div class="brand-section">
+        <div class="brand-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <div>
+            <h1>EDUSPHERE</h1>
+            <span>College ERP Portal</span>
+        </div>
+    </div>
+
+    <div class="student-info">
+        <div class="student-avatar">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <div>
+            <strong>Student</strong>
+            <span>B.Tech CSE</span>
+        </div>
+    </div>
+
+</header>
+
+
+<nav class="main-nav">
+
+    <a href="student_dashboard.html" class="active">
+        <i class="fa-solid fa-house"></i>
+        Dashboard
+    </a>
+
+    <a href="../grids/profile.html">
+        <i class="fa-solid fa-user"></i>
+        Profile
+    </a>
+
+    <a href="../settings.html">
+        <i class="fa-solid fa-gear"></i>
+        Settings
+    </a>
+
+</nav>
+
+
+<main class="dashboard-container">
+
+    <section class="welcome-section">
+
+        <div>
+            <p class="welcome-label">Student Dashboard</p>
+
+            <h2>
+                Welcome back, Student
+                <span>👋</span>
+            </h2>
+
+            <p class="welcome-description">
+                Manage your academic activities, attendance, results,
+                timetable and other college resources from one place.
+            </p>
+        </div>
+
+        <div class="academic-year">
+            <span>Academic Year</span>
+            <strong>2026–27</strong>
+        </div>
+
+    </section>
+
+
+    <section class="section-header">
+        <div>
+            <h2>Academic Resources</h2>
+            <p>Access your academic information and college resources.</p>
+        </div>
+    </section>
+
+
+    <section class="resource-grid">
+
+        <a href="../grids/attendance.html" class="resource-card">
+
+            <div class="resource-icon attendance">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+
+            <div class="resource-content">
+                <h3>Attendance</h3>
+                <p>View your attendance records and attendance trends.</p>
+            </div>
+
+            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+        </a>
+
+
+        <a href="../grids/syllabus.html" class="resource-card">
+
+            <div class="resource-icon syllabus">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <div class="resource-content">
+                <h3>Syllabus</h3>
+                <p>View subjects, units, topics and syllabus details.</p>
+            </div>
+
+            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+        </a>
+
+
+        <a href="../grids/timetable.html" class="resource-card">
+
+            <div class="resource-icon timetable">
+                <i class="fa-solid fa-table-columns"></i>
+            </div>
+
+            <div class="resource-content">
+                <h3>Timetable</h3>
+                <p>Check your daily lecture and class schedule.</p>
+            </div>
+
+            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+        </a>
+
+
+        <a href="../grids/assignments.html" class="resource-card">
+
+            <div class="resource-icon assignments">
+                <i class="fa-solid fa-file-lines"></i>
+            </div>
+
+            <div class="resource-content">
+                <h3>Assignments</h3>
+                <p>View your current and upcoming assignments.</p>
+            </div>
+
+            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+        </a>
+
+
+        <a href="../grids/results.html" class="resource-card">
+
+            <div class="resource-icon results">
+                <i class="fa-solid fa-chart-column"></i>
+            </div>
+
+            <div class="resource-content">
+                <h3>Results</h3>
+                <p>View examination marks and academic performance.</p>
+            </div>
+
+            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+        </a>
+
+
+        <a href="../grids/question_papers.html" class="resource-card">
+
+            <div class="resource-icon papers">
+                <i class="fa-solid fa-file-pdf"></i>
+            </div>
+
+            <div class="resource-content">
+                <h3>Question Papers</h3>
+                <p>Access previous examination question papers.</p>
+            </div>
+
+            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+        </a>
+
+
+        <a href="../grids/events.html" class="resource-card">
+
+            <div class="resource-icon events">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <div class="resource-content">
+                <h3>Events</h3>
+                <p>Explore college events, activities and programs.</p>
+            </div>
+
+            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+        </a>
+
+
+        <a href="../grids/academic_calendar.html" class="resource-card">
+
+            <div class="resource-icon calendar">
+                <i class="fa-solid fa-calendar"></i>
+            </div>
+
+            <div class="resource-content">
+                <h3>Academic Calendar</h3>
+                <p>View important academic dates and schedules.</p>
+            </div>
+
+            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+        </a>
+
+
+        <a href="../grids/company_visit.html" class="resource-card">
+
+            <div class="resource-icon companies">
+                <i class="fa-solid fa-building"></i>
+            </div>
+
+            <div class="resource-content">
+                <h3>Companies</h3>
+                <p>View company visits and placement activities.</p>
+            </div>
+
+            <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+        </a>
+
+    </section>
+
+
+    <section class="dashboard-bottom">
+
+        <div class="dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+                    <h2>Today's Classes</h2>
+                    <p>Your scheduled lectures for today.</p>
+                </div>
+
+                <i class="fa-solid fa-clock"></i>
+
+            </div>
+
+
+            <div class="class-list">
+
+                <div class="class-item">
+
+                    <div class="class-time">
+                        <strong>09:00 AM</strong>
+                    </div>
+
+                    <div class="class-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <div class="class-info">
+                        <h3>Data Structures</h3>
+                        <p>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Room 204
+                        </p>
+                        <span>B.Tech CSE</span>
+                    </div>
+
+                </div>
+
+
+                <div class="class-item">
+
+                    <div class="class-time">
+                        <strong>11:00 AM</strong>
+                    </div>
+
+                    <div class="class-icon">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+
+                    <div class="class-info">
+                        <h3>Database Management</h3>
+                        <p>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Room 301
+                        </p>
+                        <span>B.Tech CSE</span>
+                    </div>
+
+                </div>
+
+
+                <div class="class-item">
+
+                    <div class="class-time">
+                        <strong>02:00 PM</strong>
+                    </div>
+
+                    <div class="class-icon">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+
+                    <div class="class-info">
+                        <h3>Web Technologies</h3>
+                        <p>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Computer Lab
+                        </p>
+                        <span>B.Tech CSE</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+                    <h2>Upcoming Dates</h2>
+                    <p>Important academic activities.</p>
+                </div>
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+            </div>
+
+
+            <div class="upcoming-list">
+
+                <div class="upcoming-item">
+
+                    <div class="date-box">
+                        <strong>02</strong>
+                        <span>OCT</span>
+                    </div>
+
+                    <div>
+                        <h3>Internal Assessment</h3>
+                        <p>Academic Activity</p>
+                    </div>
+
+                </div>
+
+
+                <div class="upcoming-item">
+
+                    <div class="date-box">
+                        <strong>05</strong>
+                        <span>OCT</span>
+                    </div>
+
+                    <div>
+                        <h3>Faculty Meeting</h3>
+                        <p>College Activity</p>
+                    </div>
+
+                </div>
+
+
+                <div class="upcoming-item">
+
+                    <div class="date-box">
+                        <strong>08</strong>
+                        <span>OCT</span>
+                    </div>
+
+                    <div>
+                        <h3>College Event</h3>
+                        <p>Campus Activity</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <p>
+        © 2026 Edusphere · College ERP Portal
+    </p>
+
+</footer>
+
 </body>
-
 </html>

@@ -2,89 +2,433 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Employee Dashboard - Edusphere</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="../../assets/css/employee_dashboard.css">
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Employee Dashboard - Edusphere</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/employee_dashboard.css"
+    >
 </head>
 
 <body>
-  <!-- Header Section -->
-  <header>
-    <div class="header-content">
-      <h1><i class="fas fa-chalkboard-user"></i> Teacher Dashboard</h1>
-      <div class="welcome-logout">
-        <span>Welcome, Teacher</span>
-      </div>
-    </div>
-  </header>
 
-  <!-- Navigation Menu -->
-  <nav>
-    <ul class="nav-menu">
-      <li><a href="#" class="nav-link"><i class="fas fa-home"></i> Dashboard</a></li>
-      <li><a href="#" class="nav-link"><i class="fas fa-user"></i> Profile</a></li>
-      <li><a href="#" class="nav-link"><i class="fas fa-envelope"></i> Messages</a></li>
-      <li><a href="#" class="nav-link"><i class="fas fa-cog"></i> Settings</a></li>
-    </ul>
-  </nav>
+    <header class="top-header">
 
-  <!-- Main Dashboard Section -->
-  <div class="main-container">
-    <div class="dashboard-container">
-      <!-- Dashboard Cards -->
-      <div class="dashboard-block">
-        <i class="fas fa-clipboard-check block-icon"></i>
-        <h3>Mark Attendance</h3>
-        <p>Track student attendance quickly and efficiently.</p>
-      </div>
+        <div class="brand">
 
-      <div class="dashboard-block">
-        <i class="fas fa-file-contract block-icon"></i>
-        <h3>Assignments</h3>
-        <p>Manage and grade assignments from students.</p>
-      </div>
+            <div class="brand-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
 
-      <div class="dashboard-block">
-        <i class="fas fa-users block-icon"></i>
-        <h3>Student Info</h3>
-        <p>View and manage student profiles.</p>
-      </div>
+            <div>
+                <h1>EDUSPHERE</h1>
+                <span>College ERP Portal</span>
+            </div>
 
-      <div class="dashboard-block">
-        <i class="fas fa-chart-line block-icon"></i>
-        <h3>Reports</h3>
-        <p>Generate student performance reports.</p>
-      </div>
+        </div>
 
-      <div class="dashboard-block">
-        <i class="fas fa-calendar-check block-icon"></i>
-        <h3>Calendar</h3>
-        <p>View upcoming events and deadlines.</p>
-      </div>
+        <div class="header-right">
 
-      <div class="dashboard-block">
-        <i class="fas fa-comments block-icon"></i>
-        <h3>Messages</h3>
-        <p>Communicate with students and staff.</p>
-      </div>
+            <div class="user-info">
 
-      <div class="dashboard-block">
-        <i class="fas fa-star block-icon"></i>
-        <h3>Grades</h3>
-        <p>View and input student grades.</p>
-      </div>
+                <div class="user-avatar">
+                    T
+                </div>
 
-      <div class="dashboard-block">
-        <i class="fas fa-hourglass-end block-icon"></i>
-        <h3>Timetable</h3>
-        <p>Check your class schedule for the day.</p>
-      </div>
-    </div>
-  </div>
+                <div class="user-details">
+                    <strong>Teacher</strong>
+                    <span>Employee</span>
+                </div>
 
-  <script src="../../assets/js/script.js"></script>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <nav class="navigation">
+
+        <div class="nav-container">
+
+            <a href="#" class="nav-link active">
+                <i class="fas fa-house"></i>
+                Dashboard
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="fas fa-user"></i>
+                Profile
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="fas fa-gear"></i>
+                Settings
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="main-container">
+
+        <section class="welcome-section">
+
+            <div>
+
+                <span class="section-label">
+                    EMPLOYEE PORTAL
+                </span>
+
+                <h2>
+                    Welcome back, Teacher
+                </h2>
+
+                <p>
+                    Access your academic and classroom management tools.
+                </p>
+
+            </div>
+
+            <div class="date-info">
+
+                <i class="far fa-calendar"></i>
+
+                <span>
+                    Academic Year 2026–27
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <div>
+                    <h3>Academic Management</h3>
+
+                    <p>
+                        Access your academic management modules.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+                <a href="#" class="dashboard-block">
+
+                    <div class="block-icon blue">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+
+                    <div class="block-content">
+
+                        <h3>Mark Attendance</h3>
+
+                        <p>
+                            Record and manage attendance for your classes.
+                        </p>
+
+                    </div>
+
+                    <i class="fas fa-arrow-right block-arrow"></i>
+
+                </a>
+
+
+                <a href="#" class="dashboard-block">
+
+                    <div class="block-icon green">
+                        <i class="fas fa-users"></i>
+                    </div>
+
+                    <div class="block-content">
+
+                        <h3>Student Information</h3>
+
+                        <p>
+                            View student profiles and academic details.
+                        </p>
+
+                    </div>
+
+                    <i class="fas fa-arrow-right block-arrow"></i>
+
+                </a>
+
+
+                <a href="#" class="dashboard-block">
+
+                    <div class="block-icon purple">
+                        <i class="fas fa-star"></i>
+                    </div>
+
+                    <div class="block-content">
+
+                        <h3>Grades</h3>
+
+                        <p>
+                            Enter and manage student academic grades.
+                        </p>
+
+                    </div>
+
+                    <i class="fas fa-arrow-right block-arrow"></i>
+
+                </a>
+
+
+                <a href="#" class="dashboard-block">
+
+                    <div class="block-icon orange">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+
+                    <div class="block-content">
+
+                        <h3>Calendar</h3>
+
+                        <p>
+                            View academic events and important dates.
+                        </p>
+
+                    </div>
+
+                    <i class="fas fa-arrow-right block-arrow"></i>
+
+                </a>
+
+
+                <a href="#" class="dashboard-block">
+
+                    <div class="block-icon teal">
+                        <i class="fas fa-clock"></i>
+                    </div>
+
+                    <div class="block-content">
+
+                        <h3>Timetable</h3>
+
+                        <p>
+                            View your classes and daily teaching schedule.
+                        </p>
+
+                    </div>
+
+                    <i class="fas fa-arrow-right block-arrow"></i>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section class="bottom-section">
+
+            <div class="panel schedule-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h3>Today's Schedule</h3>
+
+                        <p>
+                            Your classes for today
+                        </p>
+                    </div>
+
+                    <a href="#">
+                        View timetable
+                    </a>
+
+                </div>
+
+
+                <div class="schedule-item">
+
+                    <div class="schedule-time">
+                        <strong>09:00</strong>
+                        <span>AM</span>
+                    </div>
+
+                    <div class="schedule-line"></div>
+
+                    <div class="schedule-content">
+
+                        <strong>Data Structures</strong>
+
+                        <span>
+                            Room 204 · B.Tech CSE
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="schedule-item">
+
+                    <div class="schedule-time">
+                        <strong>11:00</strong>
+                        <span>AM</span>
+                    </div>
+
+                    <div class="schedule-line"></div>
+
+                    <div class="schedule-content">
+
+                        <strong>Database Management</strong>
+
+                        <span>
+                            Room 301 · B.Tech CSE
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="schedule-item">
+
+                    <div class="schedule-time">
+                        <strong>02:00</strong>
+                        <span>PM</span>
+                    </div>
+
+                    <div class="schedule-line"></div>
+
+                    <div class="schedule-content">
+
+                        <strong>Web Technologies</strong>
+
+                        <span>
+                            Computer Lab · B.Tech CSE
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h3>Academic Calendar</h3>
+
+                        <p>
+                            Upcoming academic dates
+                        </p>
+                    </div>
+
+                    <a href="#">
+                        View calendar
+                    </a>
+
+                </div>
+
+
+                <div class="calendar-event">
+
+                    <div class="event-date">
+                        <strong>02</strong>
+                        <span>OCT</span>
+                    </div>
+
+                    <div class="event-content">
+
+                        <strong>
+                            Internal Assessment
+                        </strong>
+
+                        <span>
+                            Academic assessment
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="calendar-event">
+
+                    <div class="event-date">
+                        <strong>05</strong>
+                        <span>OCT</span>
+                    </div>
+
+                    <div class="event-content">
+
+                        <strong>
+                            Faculty Meeting
+                        </strong>
+
+                        <span>
+                            Department meeting
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="calendar-event">
+
+                    <div class="event-date">
+                        <strong>08</strong>
+                        <span>OCT</span>
+                    </div>
+
+                    <div class="event-content">
+
+                        <strong>
+                            Academic Event
+                        </strong>
+
+                        <span>
+                            College event
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        © 2026 Edusphere · College ERP Portal
+    </footer>
+
+
+    <script src="../../assets/js/script.js"></script>
+
 </body>
 
 </html>

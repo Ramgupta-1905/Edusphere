@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | Edusphere</title>
+
+    <link rel="stylesheet" href="../../assets/css/settings.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <button class="menu-toggle" id="menu-icon">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <span>Edusphere</span>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="../dashboards/student_dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="profile.html">
+                <i class="fa-regular fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="attendance.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Attendance</span>
+            </a>
+
+            <a href="syllabus.html">
+                <i class="fa-solid fa-book"></i>
+                <span>Syllabus</span>
+            </a>
+
+            <a href="timetable.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Timetable</span>
+            </a>
+
+            <a href="assignments.html">
+                <i class="fa-solid fa-list-check"></i>
+                <span>Assignments</span>
+            </a>
+
+            <a href="results.html">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Results</span>
+            </a>
+
+            <a href="question_papers.html">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Question Papers</span>
+            </a>
+
+            <a href="events.html">
+                <i class="fa-regular fa-calendar"></i>
+                <span>Events</span>
+            </a>
+
+            <a href="support.html">
+                <i class="fa-solid fa-headset"></i>
+                <span>Support</span>
+            </a>
+
+            <a href="notifications.html">
+                <i class="fa-regular fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+
+            <a href="academic_calendar.html">
+                <i class="fa-solid fa-calendar-week"></i>
+                <span>Academic Calendar</span>
+            </a>
+
+            <a href="company_visit.html">
+                <i class="fa-solid fa-building"></i>
+                <span>Company Visits</span>
+            </a>
+
+            <a href="settings.html" class="active">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="page-header">
+
+            <div>
+                <p class="eyebrow">ACCOUNT</p>
+
+                <h1>Settings</h1>
+
+                <p class="page-description">
+                    Manage your account preferences and portal settings.
+                </p>
+            </div>
+
+            <div class="header-icon">
+                <i class="fa-solid fa-gear"></i>
+            </div>
+
+        </header>
+
+
+        <div class="settings-layout">
+
+
+            <section class="settings-card">
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+
+                    <div>
+                        <h2>Account Information</h2>
+
+                        <p>
+                            Basic information associated with your student account.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label>Full Name</label>
+
+                        <input
+                            type="text"
+                            value="RAM GUPTA"
+                            readonly
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Student ID</label>
+
+                        <input
+                            type="text"
+                            value="2300330120074"
+                            readonly
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Email Address</label>
+
+                        <input
+                            type="email"
+                            value="ramgupta@example.com"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Phone Number</label>
+
+                        <input
+                            type="tel"
+                            value="+91 98765 43210"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-footer">
+
+                    <button class="primary-button" onclick="saveSettings()">
+                        <i class="fa-solid fa-check"></i>
+                        Save Changes
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <section class="settings-card">
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+                        <i class="fa-regular fa-bell"></i>
+                    </div>
+
+                    <div>
+                        <h2>Notifications</h2>
+
+                        <p>
+                            Choose which academic updates you want to receive.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="setting-list">
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Assignment Updates</h3>
+
+                            <p>
+                                Get notified when new assignments are added.
+                            </p>
+
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Attendance Alerts</h3>
+
+                            <p>
+                                Receive alerts about important attendance updates.
+                            </p>
+
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Result Notifications</h3>
+
+                            <p>
+                                Get notified when examination results are published.
+                            </p>
+
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>College Events</h3>
+
+                            <p>
+                                Receive updates about upcoming college events.
+                            </p>
+
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="settings-card">
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div>
+                        <h2>Security</h2>
+
+                        <p>
+                            Manage your account security settings.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="security-item">
+
+                    <div>
+
+                        <h3>Password</h3>
+
+                        <p>
+                            Last updated recently.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="secondary-button"
+                        onclick="changePassword()"
+                    >
+                        Change Password
+                    </button>
+
+                </div>
+
+
+                <div class="security-item">
+
+                    <div>
+
+                        <h3>Login Sessions</h3>
+
+                        <p>
+                            You are currently logged in on this device.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="secondary-button"
+                        onclick="viewSessions()"
+                    >
+                        View Sessions
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <section class="settings-card">
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+                        <i class="fa-solid fa-display"></i>
+                    </div>
+
+                    <div>
+                        <h2>Portal Preferences</h2>
+
+                        <p>
+                            Customize how Edusphere appears and behaves.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="preference-row">
+
+                    <div class="setting-info">
+
+                        <h3>Theme</h3>
+
+                        <p>
+                            Choose the appearance of the student portal.
+                        </p>
+
+                    </div>
+
+
+                    <select id="themeSelect">
+
+                        <option value="light">
+                            Light
+                        </option>
+
+                        <option value="system">
+                            System Default
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="preference-row">
+
+                    <div class="setting-info">
+
+                        <h3>Language</h3>
+
+                        <p>
+                            Select the language used throughout the portal.
+                        </p>
+
+                    </div>
+
+
+                    <select>
+
+                        <option>
+                            English
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </section>
+
+
+            <section class="danger-card">
+
+                <div class="danger-icon">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </div>
+
+                <div class="danger-content">
+
+                    <h2>Logout</h2>
+
+                    <p>
+                        Sign out from your current Edusphere session.
+                    </p>
+
+                </div>
+
+                <button
+                    class="logout-button"
+                    onclick="logoutUser()"
+                >
+                    Logout
+                </button>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        const sidebar = document.getElementById("sidebar");
+        const menuButton = document.getElementById("menu-icon");
+        const menuIcon = menuButton.querySelector("i");
+
+        menuButton.addEventListener("click", function () {
+
+            sidebar.classList.toggle("active");
+
+            if (sidebar.classList.contains("active")) {
+
+                menuIcon.classList.remove("fa-bars");
+                menuIcon.classList.add("fa-xmark");
+
+            } else {
+
+                menuIcon.classList.remove("fa-xmark");
+                menuIcon.classList.add("fa-bars");
+
+            }
+
+        });
+
+
+        function saveSettings() {
+            alert("Settings saved successfully.");
+        }
+
+
+        function changePassword() {
+            alert("Password change will be available after backend integration.");
+        }
+
+
+        function viewSessions() {
+            alert("Session management will be available after backend integration.");
+        }
+
+
+        function logoutUser() {
+            const confirmLogout = confirm(
+                "Are you sure you want to logout?"
+            );
+
+            if (confirmLogout) {
+                window.location.href = "../login/student_login.html";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

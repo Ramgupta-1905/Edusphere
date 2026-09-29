@@ -1,1 +1,290 @@
-* { margin: 0; padding: 0; box-sizing: border-box; } :root { --navy: #172554; --blue: #2563eb; --blue-dark: #1d4ed8; --blue-light: #eff6ff; --text: #1e293b; --muted: #64748b; --border: #dbe2ea; --background: #f8fafc; --white: #ffffff; } /* ============================== PAGE ============================== */ body { min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 24px; font-family: "Segoe UI", Arial, sans-serif; background: var(--background); position: relative; overflow: hidden; } /* ============================== BACKGROUND DECORATION ============================== */ body::before { content: ""; position: fixed; width: 430px; height: 430px; top: -250px; right: -130px; border-radius: 50%; background: #dbeafe; z-index: -1; } body::after { content: ""; position: fixed; width: 330px; height: 330px; bottom: -200px; left: -140px; border-radius: 50%; background: #eef2ff; z-index: -1; } /* ============================== LOGIN CONTAINER ============================== */ body > div { width: 100%; display: flex; justify-content: center; align-items: center; } /* ============================== LOGIN FORM ============================== */ form { width: 100%; max-width: 410px; background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 38px 36px; box-shadow: 0 15px 40px rgba(15, 23, 42, 0.07); animation: slideUp 0.45s ease; } /* ============================== ANIMATION ============================== */ @keyframes slideUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } } /* ============================== HEADING ============================== */ form h1 { color: var(--navy); font-size: 27px; font-weight: 700; text-align: center; margin-bottom: 32px; position: relative; } /* Small line under heading */ form h1::after { content: ""; display: block; width: 38px; height: 3px; background: var(--blue); border-radius: 10px; margin: 12px auto 0; } /* ============================== INPUTS ============================== */ .box { width: 100%; height: 48px; padding: 0 14px; margin-bottom: 17px; border: 1px solid var(--border); border-radius: 9px; outline: none; background: var(--white); color: var(--text); font-family: inherit; font-size: 14px; transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; } .box::placeholder { color: #94a3b8; } .box:hover { border-color: #cbd5e1; } .box:focus { border-color: #93c5fd; background: #ffffff; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10); } /* ============================== LOGIN BUTTON ============================== */ button { width: 100%; height: 48px; margin-top: 7px; border: none; outline: none; border-radius: 9px; background: var(--blue); color: white; font-family: inherit; font-size: 14px; font-weight: 700; letter-spacing: 0.3px; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; } button:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 7px 18px rgba(37, 99, 235, 0.20); } button:active { transform: translateY(0); box-shadow: none; } /* ============================== MOBILE ============================== */ @media (max-width: 480px) { body { padding: 18px; } form { padding: 30px 22px; } form h1 { font-size: 24px; } .box { height: 46px; } button { height: 46px; } }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #172554;
+    --blue: #2563eb;
+    --blue-dark: #1d4ed8;
+    --blue-light: #eff6ff;
+    --indigo: #4f46e5;
+    --indigo-light: #eef2ff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #dbe2ea;
+    --border-focus: #93c5fd;
+    --background: #f8fafc;
+    --white: #ffffff;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: var(--background);
+    color: var(--text);
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 480px;
+    height: 480px;
+    top: -280px;
+    right: -160px;
+    border-radius: 50%;
+    background: #dbeafe;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    bottom: -220px;
+    left: -160px;
+    border-radius: 50%;
+    background: #eef2ff;
+    z-index: -1;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--navy);
+    font-size: 20px;
+    font-weight: 750;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 10px;
+    font-size: 17px;
+}
+
+.portal-label {
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 24px;
+}
+
+form {
+    width: 100%;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 38px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.07);
+    animation: loginAppear 0.45s ease;
+}
+
+@keyframes loginAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.portal-icon {
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    background: var(--blue-light);
+    color: var(--blue);
+    font-size: 21px;
+}
+
+.employee-icon {
+    background: var(--indigo-light);
+    color: var(--indigo);
+}
+
+.form-header h1 {
+    color: var(--navy);
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.form-header p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 19px;
+}
+
+.input-group label {
+    display: block;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 650;
+    margin-bottom: 8px;
+}
+
+.box {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--white);
+    color: var(--text);
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.box::placeholder {
+    color: #94a3b8;
+}
+
+.box:hover {
+    border-color: #cbd5e1;
+}
+
+.box:focus {
+    border-color: var(--border-focus);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+button {
+    width: 100%;
+    height: 48px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 9px;
+    background: var(--blue);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+button:hover {
+    background: var(--blue-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.20);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.login-footer {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 22px;
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+.login-footer span:first-child {
+    color: var(--muted);
+    font-weight: 600;
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 20px;
+    }
+
+    form {
+        padding: 30px 23px;
+        border-radius: 14px;
+    }
+
+    .login-brand {
+        font-size: 18px;
+    }
+
+    .brand-icon {
+        width: 37px;
+        height: 37px;
+        font-size: 15px;
+    }
+
+    .form-header h1 {
+        font-size: 23px;
+    }
+
+    .portal-label {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        padding: 15px;
+    }
+
+    form {
+        padding: 26px 19px;
+    }
+
+    .form-header {
+        margin-bottom: 25px;
+    }
+}

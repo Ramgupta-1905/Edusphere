@@ -1,0 +1,124 @@
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --sidebar: #111827;
+    --sidebar-hover: #1f2937;
+    --sidebar-text: #9ca3af;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background: var(--sidebar);
+    color: var(--white);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar-brand {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.brand-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.sidebar-nav {
+    padding: 18px 12px;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 11px 14px;
+    margin-bottom: 4px;
+    border-radius: 8px;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.sidebar-nav a i {
+    width: 20px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.sidebar-nav a:hover {
+    background: var(--sidebar-hover);
+    color: var(--white);
+}
+
+.sidebar-nav a.active {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: var(--white);
+    color: #172033;
+    cursor: pointer;
+    z-index: 1100;
+    font-size: 16px;
+}
+
+.menu-toggle:hover {
+    color: var(--primary);
+    border-color: #bfdbfe;
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        left: -250px;
+        transition: left 0.25s ease;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}

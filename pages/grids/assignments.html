@@ -1,265 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignments - Edusphere</title>
+    <title>Academic Tasks - Edusphere</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            width: 90%;
-            max-width: 1000px;
-            padding: 40px;
-            margin-top: 20px;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .header i {
-            font-size: 3rem;
-        }
-
-        .header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-
-        .header p {
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-
-        .menu-toggle {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            font-size: 30px;
-            cursor: pointer;
-            background: #1e3c72;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            padding: 10px 15px;
-            z-index: 1001;
-            transition: all 0.3s ease;
-        }
-
-        .sidebar {
-            width: 250px;
-            height: 100vh;
-            background-color: #1e3c72;
-            position: fixed;
-            left: -250px;
-            top: 0;
-            transition: left 0.3s ease-in-out;
-            padding-top: 60px;
-            overflow-y: auto;
-            box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .sidebar.active {
-            left: 0;
-        }
-
-        .sidebar a {
-            display: block;
-            padding: 15px;
-            color: white;
-            text-decoration: none;
-            margin-bottom: 5px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .sidebar a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .content-section {
-            margin-bottom: 30px;
-        }
-
-        .content-section h2 {
-            color: #1e3c72;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #1e3c72;
-        }
-
-        .assignment-card {
-            background: #f9f9f9;
-            border-left: 4px solid #1e3c72;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .assignment-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transform: translateY(-2px);
-        }
-
-        .assignment-card h3 {
-            color: #1e3c72;
-            margin-bottom: 10px;
-        }
-
-        .deadline {
-            display: inline-block;
-            background: #fff3cd;
-            color: #856404;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(30, 60, 114, 0.3);
-        }
-
-        .back-btn {
-            display: inline-block;
-            background: #1e3c72;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .back-btn:hover {
-            background: #2a5298;
-        }
-    </style>
+    <link rel="stylesheet" href="../../assets/css/assignments.css">
 </head>
+
 <body>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
 
-    <div class="sidebar" id="sidebar">
-        <a href="../dashboards/student_dashboard.html">Back to Dashboard</a>
-        <a href="profile.html">Profile</a>
-        <a href="attendance.html">Attendance</a>
-        <a href="syllabus.html">Syllabus</a>
-        <a href="timetable.html">Timetable</a>
-        <a href="assignments.html">Assignments</a>
-        <a href="results.html">Results</a>
-        <a href="question_papers.html">Question Papers</a>
-        <a href="events.html">Events</a>
-        <a href="support.html">Support</a>
-        <a href="notifications.html">Notifications</a>
-        <a href="academic_calendar.html">Academic Calendar</a>
-        <a href="company_visit.html">Company Visits</a>
-        <a href="settings.html">Settings</a>
-    </div>
+    <button class="menu-toggle" onclick="toggleSidebar()">
+        <i class="fas fa-bars" id="menu-icon"></i>
+    </button>
 
-    <div class="container">
-        <a href="../dashboards/student_dashboard.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
-        
-        <div class="header">
-            <i class="fas fa-tasks"></i>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
             <div>
-                <h1>Assignments</h1>
-                <p>Submit your assignments and track submission status</p>
+                <strong>Edusphere</strong>
+                <span>Student Portal</span>
             </div>
         </div>
 
-        <div class="content-section">
-            <h2>📝 Active Assignments</h2>
+        <nav class="sidebar-nav">
+            <a href="../dashboards/student_dashboard.html">
+                <i class="fas fa-house"></i>
+                <span>Dashboard</span>
+            </a>
 
-            <div class="assignment-card">
-                <h3>Data Structures: LinkedList Implementation</h3>
-                <p><strong>Course:</strong> CS-201 - Data Structures</p>
-                <p><strong>Description:</strong> Implement a complete LinkedList with insert, delete, and search operations.</p>
-                <p><strong>Instructor:</strong> Prof. John Smith</p>
-                <div class="deadline">Deadline: 25th June 2024</div>
-                <button class="submit-btn"><i class="fas fa-upload"></i> Submit Assignment</button>
+            <a href="profile.html">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="attendance.html">
+                <i class="fas fa-calendar-check"></i>
+                <span>Attendance</span>
+            </a>
+
+            <a href="syllabus.html">
+                <i class="fas fa-book-open"></i>
+                <span>Syllabus</span>
+            </a>
+
+            <a href="timetable.html">
+                <i class="fas fa-calendar-days"></i>
+                <span>Timetable</span>
+            </a>
+
+            <a href="assignments.html" class="active">
+                <i class="fas fa-list-check"></i>
+                <span>Academic Tasks</span>
+            </a>
+
+            <a href="results.html">
+                <i class="fas fa-chart-column"></i>
+                <span>Results</span>
+            </a>
+
+            <a href="question_papers.html">
+                <i class="fas fa-file-lines"></i>
+                <span>Question Papers</span>
+            </a>
+
+            <a href="events.html">
+                <i class="fas fa-calendar-star"></i>
+                <span>Events</span>
+            </a>
+
+            <a href="notifications.html">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+
+            <a href="academic_calendar.html">
+                <i class="fas fa-calendar"></i>
+                <span>Academic Calendar</span>
+            </a>
+
+            <a href="company_visit.html">
+                <i class="fas fa-building"></i>
+                <span>Company Visits</span>
+            </a>
+
+            <a href="support.html">
+                <i class="fas fa-circle-question"></i>
+                <span>Support</span>
+            </a>
+
+            <a href="settings.html">
+                <i class="fas fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="page">
+
+        <header class="page-header">
+            <div>
+                <span class="eyebrow">ACADEMICS</span>
+                <h1>Academic Tasks</h1>
+                <p>View current academic tasks, deadlines and completion status.</p>
             </div>
 
-            <div class="assignment-card">
-                <h3>Web Development: Portfolio Website</h3>
-                <p><strong>Course:</strong> WEB-101 - Web Development</p>
-                <p><strong>Description:</strong> Create a responsive portfolio website showcasing your projects and skills.</p>
-                <p><strong>Instructor:</strong> Prof. Sarah Johnson</p>
-                <div class="deadline">Deadline: 30th June 2024</div>
-                <button class="submit-btn"><i class="fas fa-upload"></i> Submit Assignment</button>
+            <div class="header-icon">
+                <i class="fas fa-list-check"></i>
+            </div>
+        </header>
+
+        <section class="summary-grid">
+
+            <div class="summary-card">
+                <div class="summary-icon blue">
+                    <i class="fas fa-list"></i>
+                </div>
+                <div>
+                    <span>Total Tasks</span>
+                    <strong>3</strong>
+                </div>
             </div>
 
-            <div class="assignment-card">
-                <h3>Database: Query Optimization</h3>
-                <p><strong>Course:</strong> DB-301 - Database Management</p>
-                <p><strong>Description:</strong> Optimize given SQL queries and explain your optimization strategy.</p>
-                <p><strong>Instructor:</strong> Prof. Michael Chen</p>
-                <div class="deadline">Deadline: 28th June 2024</div>
-                <button class="submit-btn"><i class="fas fa-upload"></i> Submit Assignment</button>
+            <div class="summary-card">
+                <div class="summary-icon orange">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div>
+                    <span>Upcoming</span>
+                    <strong>2</strong>
+                </div>
             </div>
-        </div>
 
-        <div class="content-section">
-            <h2>✅ Submitted Assignments</h2>
-
-            <div class="assignment-card" style="border-left-color: #4caf50;">
-                <h3>Algorithms: Sorting Algorithms</h3>
-                <p><strong>Course:</strong> CS-301 - Algorithms</p>
-                <p><strong>Status:</strong> <span style="color: #4caf50; font-weight: 600;"><i class="fas fa-check-circle"></i> Submitted</span></p>
-                <p><strong>Submission Date:</strong> 15th June 2024</p>
-                <p><strong>Grade:</strong> <span style="color: #4caf50; font-weight: 600;">A+ (95/100)</span></p>
+            <div class="summary-card">
+                <div class="summary-icon green">
+                    <i class="fas fa-circle-check"></i>
+                </div>
+                <div>
+                    <span>Completed</span>
+                    <strong>1</strong>
+                </div>
             </div>
-        </div>
-    </div>
+
+        </section>
+
+        <section class="content-card">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Current Academic Tasks</h2>
+                    <p>Academic activities assigned by your instructors.</p>
+                </div>
+            </div>
+
+            <div class="task-list">
+
+                <article class="task-card">
+
+                    <div class="task-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+
+                    <div class="task-content">
+                        <div class="task-top">
+                            <div>
+                                <span class="course-label">CS-201 · Data Structures</span>
+                                <h3>LinkedList Implementation</h3>
+                            </div>
+
+                            <span class="status pending">Upcoming</span>
+                        </div>
+
+                        <p>
+                            Implement a complete LinkedList with insert, delete and search operations.
+                        </p>
+
+                        <div class="task-meta">
+                            <span>
+                                <i class="fas fa-user"></i>
+                                Prof. John Smith
+                            </span>
+
+                            <span>
+                                <i class="fas fa-calendar"></i>
+                                25 June 2024
+                            </span>
+                        </div>
+                    </div>
+
+                </article>
+
+                <article class="task-card">
+
+                    <div class="task-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+
+                    <div class="task-content">
+                        <div class="task-top">
+                            <div>
+                                <span class="course-label">WEB-101 · Web Development</span>
+                                <h3>Portfolio Website</h3>
+                            </div>
+
+                            <span class="status pending">Upcoming</span>
+                        </div>
+
+                        <p>
+                            Create a responsive portfolio website showcasing projects and technical skills.
+                        </p>
+
+                        <div class="task-meta">
+                            <span>
+                                <i class="fas fa-user"></i>
+                                Prof. Sarah Johnson
+                            </span>
+
+                            <span>
+                                <i class="fas fa-calendar"></i>
+                                30 June 2024
+                            </span>
+                        </div>
+                    </div>
+
+                </article>
+
+                <article class="task-card completed-card">
+
+                    <div class="task-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+
+                    <div class="task-content">
+
+                        <div class="task-top">
+                            <div>
+                                <span class="course-label">DB-301 · Database Management</span>
+                                <h3>Query Optimization</h3>
+                            </div>
+
+                            <span class="status completed">Completed</span>
+                        </div>
+
+                        <p>
+                            Optimize SQL queries and understand techniques used to improve database performance.
+                        </p>
+
+                        <div class="task-meta">
+                            <span>
+                                <i class="fas fa-user"></i>
+                                Prof. Michael Chen
+                            </span>
+
+                            <span>
+                                <i class="fas fa-circle-check"></i>
+                                Completed
+                            </span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
 
     <script>
         function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('active');
+            const sidebar = document.getElementById("sidebar");
+            const menuIcon = document.getElementById("menu-icon");
+
+            sidebar.classList.toggle("active");
+
+            if (sidebar.classList.contains("active")) {
+                menuIcon.classList.remove("fa-bars");
+                menuIcon.classList.add("fa-times");
+            } else {
+                menuIcon.classList.remove("fa-times");
+                menuIcon.classList.add("fa-bars");
+            }
         }
     </script>
+
 </body>
+
 </html>

@@ -3,266 +3,414 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Profile</title>
+    <title>Student Profile | Edusphere</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            transition: margin-left 0.3s ease-in-out;
-        }
-
-        .sidebar {
-            width: 250px;
-            height: 100vh;
-            background-color: #80deea; /* Lighter shade of teal */
-            position: fixed;
-            left: -250px;
-            top: 0;
-            transition: left 0.3s ease-in-out;
-            padding-top: 60px;
-            overflow-y: auto;
-            box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .sidebar.active {
-            left: 0;
-        }
-
-        .sidebar a {
-            display: block;
-            padding: 15px;
-            color: #00796b;
-            text-decoration: none;
-            margin-bottom: 5px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .sidebar a:hover {
-            background-color: #004d40;
-        }
-
-        .menu-toggle {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            font-size: 30px;
-            cursor: pointer;
-            background: transparent;
-            color: #00796b;
-            border: none;
-            z-index: 1001;
-        }
-
-        .menu-toggle:hover {
-            color: #004d40;
-        }
-
-        .profile-container {
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            width: 85%;
-            max-width: 1100px;
-            padding: 40px;
-            margin: 20px;
-            overflow: hidden;
-            transition: margin-left 0.3s ease-in-out;
-        }
-
-        .profile-header {
-            text-align: center;
-            margin-bottom: 30px;
-            position: relative;
-            background: linear-gradient(135deg, #80deea, #004d40);
-            color: white;
-            border-radius: 15px;
-            padding: 40px 0;
-        }
-
-        .profile-header img {
-            border-radius: 50%;
-            width: 130px;
-            height: 130px;
-            object-fit: cover;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 15px;
-        }
-
-        .profile-header h1 {
-            margin: 0;
-            font-size: 30px;
-            font-weight: 600;
-        }
-
-        .profile-header p {
-            margin: 5px 0;
-            font-size: 16px;
-        }
-
-        .section {
-            margin-top: 30px;
-        }
-
-        .section h2 {
-            font-size: 24px;
-            color: #00796b;
-            margin-bottom: 15px;
-            text-align: center;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        .info-card {
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 10px 0;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .info-card:hover {
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .info-card p {
-            margin: 8px 0;
-            font-size: 16px;
-            color: #555;
-        }
-
-        .info-card p strong {
-            color: #00796b;
-            font-weight: 500;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 16px;
-            color: #00796b;
-        }
-
-        .footer a {
-            color: #00796b;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .profile-container {
-                width: 90%;
-                padding: 20px;
-            }
-
-            .profile-header img {
-                width: 120px;
-                height: 120px;
-            }
-
-            .section h2 {
-                font-size: 20px;
-            }
-
-            .menu-toggle {
-                font-size: 35px;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="../../assets/css/profile.css">
 </head>
+
 <body>
-    <i class="fas fa-bars menu-toggle" id="menu-icon" onclick="toggleSidebar()"></i>
 
-    <!-- Sidebar with links -->
-    <div class="sidebar" id="sidebar">
-        <a href="../dashboards/student_dashboard.html">Back to Dashboard</a>
-        <a href="profile.html">Profile</a>
-        <a href="attendance.html">Attendance</a>
-        <a href="syllabus.html">Syllabus</a>
-        <a href="timetable.html">Timetable</a>
-        <a href="assignments.html">Assignments</a>
-        <a href="results.html">Results</a>
-        <a href="question_papers.html">Question Papers</a>
-        <a href="events.html">Events</a>
-        <a href="support.html">Support</a>
-        <a href="notifications.html">Notifications</a>
-        <a href="academic_calendar.html">Academic Calendar</a>
-        <a href="company_visit.html">Company Visits</a>
-        <a href="settings.html">Settings</a>
-    </div>
+    <button class="menu-toggle" id="menu-icon" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
 
-    <div class="profile-container">
-        <!-- Profile Header -->
-        <div class="profile-header">
-            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile Picture">
-            <h1>Ram Gupta</h1>
-            <p><strong>Roll No:</strong> 2300330120074</p>
-            <p><strong>Branch:</strong> Computer Science - B</p>
-            <p><strong>Semester:</strong> 3rd</p>
-        </div>
+    <aside class="sidebar" id="sidebar">
 
-        <!-- Academic Information Section -->
-        <div class="section">
-            <h2>Academic Information</h2>
-            <div class="info-card">
-                <p><strong>Course:</strong> Bachelor of Technology (B.Tech)</p>
-                <p><strong>Branch:</strong> Computer Science - B</p>
-                <p><strong>Enrollment No:</strong> 2021CS12345</p>
-                <p><strong>Login ID:</strong> ramgupta123</p>
-                <p><strong>College Email:</strong> ram.gupta@university.edu</p>
-                <p><strong>Personal Email:</strong> ramgupta@gmail.com</p>
-                <p><strong>Mobile Number:</strong> +91 9876543210</p>
-                <p><strong>Registration Date:</strong> 15th August 2021</p>
-                <p><strong>Course Duration:</strong> 4 years</p>
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fas fa-graduation-cap"></i>
             </div>
+            <span>Edusphere</span>
         </div>
 
-        <!-- Personal Information Section -->
-        <div class="section">
-            <h2>Personal Information</h2>
-            <div class="info-card">
-                <p><strong>Father's Name:</strong> Rajesh Gupta</p>
-                <p><strong>Mother's Name:</strong> Sunita Gupta</p>
-                <p><strong>Date of Birth:</strong> 12th April 2001</p>
-                <p><strong>Aadhar No:</strong> 1234 5678 9123</p>
-                <p><strong>Permanent Address:</strong> 123, New Street, XYZ City, India</p>
-                <p><strong>Father's Mobile:</strong> +91 9876543210</p>
-                <p><strong>Mother's Mobile:</strong> +91 9123456789</p>
-                <p><strong>Gender:</strong> Male</p>
-                <p><strong>Category:</strong> General</p>
-                <p><strong>Religion:</strong> Hindu</p>
-                <p><strong>Nationality:</strong> Indian</p>
-                <p><strong>Marital Status:</strong> Single</p>
+        <nav class="sidebar-nav">
+
+            <a href="../dashboards/student_dashboard.html">
+                <i class="fas fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="profile.html" class="active">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="attendance.html">
+                <i class="fas fa-calendar-check"></i>
+                <span>Attendance</span>
+            </a>
+
+            <a href="syllabus.html">
+                <i class="fas fa-book"></i>
+                <span>Syllabus</span>
+            </a>
+
+            <a href="timetable.html">
+                <i class="fas fa-calendar-days"></i>
+                <span>Timetable</span>
+            </a>
+
+            <a href="assignments.html">
+                <i class="fas fa-file-pen"></i>
+                <span>Assignments</span>
+            </a>
+
+            <a href="results.html">
+                <i class="fas fa-chart-column"></i>
+                <span>Results</span>
+            </a>
+
+            <a href="question_papers.html">
+                <i class="fas fa-file-lines"></i>
+                <span>Question Papers</span>
+            </a>
+
+            <a href="events.html">
+                <i class="fas fa-calendar-star"></i>
+                <span>Events</span>
+            </a>
+
+            <a href="support.html">
+                <i class="fas fa-circle-question"></i>
+                <span>Support</span>
+            </a>
+
+            <a href="notifications.html">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+
+            <a href="academic_calendar.html">
+                <i class="fas fa-calendar"></i>
+                <span>Academic Calendar</span>
+            </a>
+
+            <a href="company_visit.html">
+                <i class="fas fa-building"></i>
+                <span>Company Visits</span>
+            </a>
+
+            <a href="settings.html">
+                <i class="fas fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <main class="main-content">
+
+        <div class="page-header">
+            <h1>Student Profile</h1>
+            <p>View your academic and personal information.</p>
+        </div>
+
+        <div class="profile-card">
+
+            <div class="profile-top">
+
+                <img
+                    class="profile-image"
+                    src="https://randomuser.me/api/portraits/men/1.jpg"
+                    alt="Profile Picture"
+                >
+
+                <div class="profile-main">
+
+                    <h2>Ram Gupta</h2>
+
+                    <p>
+                        <strong>Roll No:</strong>
+                        2300330120074
+                    </p>
+
+                    <p>
+                        <strong>Branch:</strong>
+                        Computer Science - B
+                    </p>
+
+                    <p>
+                        <strong>Semester:</strong>
+                        3rd
+                    </p>
+
+                    <div class="profile-badge">
+                        <i class="fas fa-user-graduate"></i>
+                        B.Tech Student
+                    </div>
+
+                </div>
+
             </div>
+
         </div>
 
-        <!-- Footer -->
-        <div class="footer">
+        <section class="section">
+
+            <div class="section-header">
+                <h2>Academic Information</h2>
+                <p>Your academic and enrollment details.</p>
+            </div>
+
+            <div class="info-grid">
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-graduation-cap"></i>
+                        Course
+                    </div>
+                    <div class="info-value">
+                        Bachelor of Technology (B.Tech)
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-code-branch"></i>
+                        Branch
+                    </div>
+                    <div class="info-value">
+                        Computer Science - B
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-id-card"></i>
+                        Enrollment No
+                    </div>
+                    <div class="info-value">
+                        2021CS12345
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-right-to-bracket"></i>
+                        Login ID
+                    </div>
+                    <div class="info-value">
+                        ramgupta123
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-envelope"></i>
+                        College Email
+                    </div>
+                    <div class="info-value">
+                        ram.gupta@university.edu
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-envelope-open"></i>
+                        Personal Email
+                    </div>
+                    <div class="info-value">
+                        ramgupta@gmail.com
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-phone"></i>
+                        Mobile Number
+                    </div>
+                    <div class="info-value">
+                        +91 9876543210
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-calendar-plus"></i>
+                        Registration Date
+                    </div>
+                    <div class="info-value">
+                        15th August 2021
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-clock"></i>
+                        Course Duration
+                    </div>
+                    <div class="info-value">
+                        4 years
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <div class="section-header">
+                <h2>Personal Information</h2>
+                <p>Your personal and contact information.</p>
+            </div>
+
+            <div class="info-grid">
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-user"></i>
+                        Father's Name
+                    </div>
+                    <div class="info-value">
+                        Rajesh Gupta
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-user"></i>
+                        Mother's Name
+                    </div>
+                    <div class="info-value">
+                        Sunita Gupta
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-cake-candles"></i>
+                        Date of Birth
+                    </div>
+                    <div class="info-value">
+                        12th April 2001
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-address-card"></i>
+                        Aadhar No
+                    </div>
+                    <div class="info-value">
+                        1234 5678 9123
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-location-dot"></i>
+                        Permanent Address
+                    </div>
+                    <div class="info-value">
+                        123, New Street, XYZ City, India
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-phone"></i>
+                        Father's Mobile
+                    </div>
+                    <div class="info-value">
+                        +91 9876543210
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-phone"></i>
+                        Mother's Mobile
+                    </div>
+                    <div class="info-value">
+                        +91 9123456789
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-venus-mars"></i>
+                        Gender
+                    </div>
+                    <div class="info-value">
+                        Male
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-users"></i>
+                        Category
+                    </div>
+                    <div class="info-value">
+                        General
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-globe"></i>
+                        Religion
+                    </div>
+                    <div class="info-value">
+                        Hindu
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-flag"></i>
+                        Nationality
+                    </div>
+                    <div class="info-value">
+                        Indian
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">
+                        <i class="fas fa-heart"></i>
+                        Marital Status
+                    </div>
+                    <div class="info-value">
+                        Single
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer class="footer">
             <p>Student Profile - Ram Gupta</p>
-            <p><a href="mailto:ram.gupta@university.edu">Contact Support</a></p>
-        </div>
-    </div>
+
+            <p>
+                <a href="mailto:ram.gupta@university.edu">
+                    Contact Support
+                </a>
+            </p>
+        </footer>
+
+    </main>
 
     <script>
         function toggleSidebar() {
             const sidebar = document.getElementById("sidebar");
-            const content = document.querySelector(".profile-container");
+            const menuIcon = document.querySelector("#menu-icon i");
+
             sidebar.classList.toggle("active");
-            content.style.marginLeft = sidebar.classList.contains("active") ? '250px' : '0';
+
+            if (sidebar.classList.contains("active")) {
+                menuIcon.classList.remove("fa-bars");
+                menuIcon.classList.add("fa-times");
+            } else {
+                menuIcon.classList.remove("fa-times");
+                menuIcon.classList.add("fa-bars");
+            }
         }
     </script>
+
 </body>
 </html>

@@ -3,278 +3,525 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timetable - Edusphere</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            padding: 20px;
-        }
+    <title>Timetable | Edusphere</title>
 
-        .container {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            width: 90%;
-            max-width: 1000px;
-            padding: 40px;
-            margin-top: 20px;
-        }
+    <link rel="stylesheet" href="../../assets/css/timetable.css">
 
-        .header {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .header i {
-            font-size: 3rem;
-        }
-
-        .header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-
-        .header p {
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-
-        .menu-toggle {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            font-size: 30px;
-            cursor: pointer;
-            background: #1e3c72;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            padding: 10px 15px;
-            z-index: 1001;
-            transition: all 0.3s ease;
-        }
-
-        .menu-toggle:hover {
-            background: #2a5298;
-        }
-
-        .sidebar {
-            width: 250px;
-            height: 100vh;
-            background-color: #1e3c72;
-            position: fixed;
-            left: -250px;
-            top: 0;
-            transition: left 0.3s ease-in-out;
-            padding-top: 60px;
-            overflow-y: auto;
-            box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .sidebar.active {
-            left: 0;
-        }
-
-        .sidebar a {
-            display: block;
-            padding: 15px;
-            color: white;
-            text-decoration: none;
-            margin-bottom: 5px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .sidebar a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .content-section {
-            margin-bottom: 30px;
-        }
-
-        .content-section h2 {
-            color: #1e3c72;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #1e3c72;
-        }
-
-        .timetable {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        .timetable th {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            padding: 15px;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .timetable td {
-            padding: 15px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .timetable tr:hover {
-            background-color: #f9f9f9;
-        }
-
-        .course-tag {
-            background: #e3f2fd;
-            color: #1e3c72;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .room-tag {
-            background: #f3e5f5;
-            color: #6a1b9a;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-        }
-
-        .back-btn {
-            display: inline-block;
-            background: #1e3c72;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .back-btn:hover {
-            background: #2a5298;
-            transform: translateX(-3px);
-        }
-    </style>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 </head>
+
 <body>
-    <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
 
-    <div class="sidebar" id="sidebar">
-        <a href="../dashboards/student_dashboard.html">Back to Dashboard</a>
-        <a href="profile.html">Profile</a>
-        <a href="attendance.html">Attendance</a>
-        <a href="syllabus.html">Syllabus</a>
-        <a href="timetable.html">Timetable</a>
-        <a href="assignments.html">Assignments</a>
-        <a href="results.html">Results</a>
-        <a href="question_papers.html">Question Papers</a>
-        <a href="events.html">Events</a>
-        <a href="support.html">Support</a>
-        <a href="notifications.html">Notifications</a>
-        <a href="academic_calendar.html">Academic Calendar</a>
-        <a href="company_visit.html">Company Visits</a>
-        <a href="settings.html">Settings</a>
-    </div>
+    <button class="menu-toggle" id="menu-icon">
+        <i class="fa-solid fa-bars"></i>
+    </button>
 
-    <div class="container">
-        <a href="../dashboards/student_dashboard.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
-        
-        <div class="header">
-            <i class="fas fa-calendar-days"></i>
-            <div>
-                <h1>Class Timetable</h1>
-                <p>Your weekly class schedule for this semester</p>
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
             </div>
+
+            <span>Edusphere</span>
+
         </div>
 
-        <div class="content-section">
-            <h2>📅 Weekly Schedule</h2>
-            <table class="timetable">
-                <thead>
-                    <tr>
-                        <th>Time</th>
-                        <th>Monday</th>
-                        <th>Tuesday</th>
-                        <th>Wednesday</th>
-                        <th>Thursday</th>
-                        <th>Friday</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>09:00 - 10:30</strong></td>
-                        <td><span class="course-tag">Data Structures</span><br><span class="room-tag">Room A-101</span></td>
-                        <td>-</td>
-                        <td><span class="course-tag">Mathematics</span><br><span class="room-tag">Room B-202</span></td>
-                        <td>-</td>
-                        <td><span class="course-tag">Web Dev</span><br><span class="room-tag">Lab-C3</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>10:45 - 12:15</strong></td>
-                        <td>-</td>
-                        <td><span class="course-tag">Database Mgmt</span><br><span class="room-tag">Lab-C1</span></td>
-                        <td>-</td>
-                        <td><span class="course-tag">Algorithms</span><br><span class="room-tag">Room A-105</span></td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td><strong>13:00 - 14:30</strong></td>
-                        <td><span class="course-tag">Physics</span><br><span class="room-tag">Room B-301</span></td>
-                        <td>-</td>
-                        <td><span class="course-tag">Web Dev</span><br><span class="room-tag">Lab-C3</span></td>
-                        <td>-</td>
-                        <td><span class="course-tag">Database Mgmt</span><br><span class="room-tag">Lab-C1</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>14:45 - 16:15</strong></td>
-                        <td>-</td>
-                        <td><span class="course-tag">Data Structures</span><br><span class="room-tag">Room A-101</span></td>
-                        <td>-</td>
-                        <td><span class="course-tag">Mathematics</span><br><span class="room-tag">Room B-202</span></td>
-                        <td>-</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
 
-        <div class="content-section">
-            <h2>📍 Room Locations</h2>
-            <ul style="margin-left: 20px; line-height: 1.8;">
-                <li><strong>Room A-101:</strong> Main Building, First Floor</li>
-                <li><strong>Room B-202:</strong> Science Building, Second Floor</li>
-                <li><strong>Lab-C1:</strong> Computer Lab, Building C, First Floor</li>
-                <li><strong>Lab-C3:</strong> Computer Lab, Building C, Third Floor</li>
-            </ul>
-        </div>
-    </div>
+        <nav class="sidebar-nav">
+
+            <a href="../dashboards/student_dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="profile.html">
+                <i class="fa-regular fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="attendance.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Attendance</span>
+            </a>
+
+            <a href="syllabus.html">
+                <i class="fa-solid fa-book"></i>
+                <span>Syllabus</span>
+            </a>
+
+            <a href="timetable.html" class="active">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Timetable</span>
+            </a>
+
+            <a href="assignments.html">
+                <i class="fa-solid fa-list-check"></i>
+                <span>Assignments</span>
+            </a>
+
+            <a href="results.html">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Results</span>
+            </a>
+
+            <a href="question_papers.html">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Question Papers</span>
+            </a>
+
+            <a href="events.html">
+                <i class="fa-regular fa-calendar"></i>
+                <span>Events</span>
+            </a>
+
+            <a href="support.html">
+                <i class="fa-solid fa-headset"></i>
+                <span>Support</span>
+            </a>
+
+            <a href="notifications.html">
+                <i class="fa-regular fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+
+            <a href="academic_calendar.html">
+                <i class="fa-solid fa-calendar-week"></i>
+                <span>Academic Calendar</span>
+            </a>
+
+            <a href="company_visit.html">
+                <i class="fa-solid fa-building"></i>
+                <span>Company Visits</span>
+            </a>
+
+            <a href="settings.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="page-header">
+
+            <div>
+                <p class="eyebrow">ACADEMIC SCHEDULE</p>
+
+                <h1>Class Timetable</h1>
+
+                <p class="page-description">
+                    Your weekly class schedule for this semester.
+                </p>
+            </div>
+
+            <div class="header-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+        </header>
+
+
+        <section class="schedule-card">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Weekly Schedule</h2>
+
+                    <p>
+                        Your classes arranged by day and lecture.
+                    </p>
+                </div>
+
+                <div class="semester-badge">
+                    <i class="fa-solid fa-calendar"></i>
+                    Semester 3
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table class="timetable">
+
+                    <thead>
+
+                        <tr>
+                            <th>Day</th>
+                            <th>Lecture 1</th>
+                            <th>Lecture 2</th>
+                            <th>Lecture 3</th>
+                            <th>Lecture 4</th>
+                            <th>Lecture 5</th>
+                            <th>Lecture 6</th>
+                            <th>Lecture 7</th>
+                            <th>Lecture 8</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td class="day-cell">
+                                <strong>Monday</strong>
+                            </td>
+
+                            <td>
+                                <div class="class-item">
+                                    <span class="course-tag">
+                                        Data Structures
+                                    </span>
+
+                                    <span class="room-tag">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Room A-101
+                                    </span>
+                                </div>
+                            </td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td>
+                                <div class="class-item">
+                                    <span class="course-tag">
+                                        Physics
+                                    </span>
+
+                                    <span class="room-tag">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Room B-301
+                                    </span>
+                                </div>
+                            </td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td class="day-cell">
+                                <strong>Tuesday</strong>
+                            </td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td>
+                                <div class="class-item">
+                                    <span class="course-tag">
+                                        Database Mgmt
+                                    </span>
+
+                                    <span class="room-tag">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Lab-C1
+                                    </span>
+                                </div>
+                            </td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td>
+                                <div class="class-item">
+                                    <span class="course-tag">
+                                        Data Structures
+                                    </span>
+
+                                    <span class="room-tag">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Room A-101
+                                    </span>
+                                </div>
+                            </td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td class="day-cell">
+                                <strong>Wednesday</strong>
+                            </td>
+
+                            <td>
+                                <div class="class-item">
+                                    <span class="course-tag">
+                                        Mathematics
+                                    </span>
+
+                                    <span class="room-tag">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Room B-202
+                                    </span>
+                                </div>
+                            </td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td>
+                                <div class="class-item">
+                                    <span class="course-tag">
+                                        Web Dev
+                                    </span>
+
+                                    <span class="room-tag">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Lab-C3
+                                    </span>
+                                </div>
+                            </td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td class="day-cell">
+                                <strong>Thursday</strong>
+                            </td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td>
+                                <div class="class-item">
+                                    <span class="course-tag">
+                                        Algorithms
+                                    </span>
+
+                                    <span class="room-tag">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Room A-105
+                                    </span>
+                                </div>
+                            </td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td>
+                                <div class="class-item">
+                                    <span class="course-tag">
+                                        Mathematics
+                                    </span>
+
+                                    <span class="room-tag">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Room B-202
+                                    </span>
+                                </div>
+                            </td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td class="day-cell">
+                                <strong>Friday</strong>
+                            </td>
+
+                            <td>
+                                <div class="class-item">
+                                    <span class="course-tag">
+                                        Web Dev
+                                    </span>
+
+                                    <span class="room-tag">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Lab-C3
+                                    </span>
+                                </div>
+                            </td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td>
+                                <div class="class-item">
+                                    <span class="course-tag">
+                                        Database Mgmt
+                                    </span>
+
+                                    <span class="room-tag">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Lab-C1
+                                    </span>
+                                </div>
+                            </td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                            <td class="empty-cell">—</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <section class="locations-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Room Locations</h2>
+
+                    <p>
+                        Building and room information for your classes.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="location-grid">
+
+                <div class="location-card">
+
+                    <div class="location-icon">
+                        <i class="fa-solid fa-door-open"></i>
+                    </div>
+
+                    <div>
+                        <h3>Room A-101</h3>
+                        <p>Main Building, First Floor</p>
+                    </div>
+
+                </div>
+
+
+                <div class="location-card">
+
+                    <div class="location-icon">
+                        <i class="fa-solid fa-door-open"></i>
+                    </div>
+
+                    <div>
+                        <h3>Room B-202</h3>
+                        <p>Science Building, Second Floor</p>
+                    </div>
+
+                </div>
+
+
+                <div class="location-card">
+
+                    <div class="location-icon">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+
+                    <div>
+                        <h3>Lab-C1</h3>
+                        <p>Computer Lab, Building C, First Floor</p>
+                    </div>
+
+                </div>
+
+
+                <div class="location-card">
+
+                    <div class="location-icon">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+
+                    <div>
+                        <h3>Lab-C3</h3>
+                        <p>Computer Lab, Building C, Third Floor</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
 
     <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('active');
-        }
+
+        const sidebar = document.getElementById("sidebar");
+        const menuButton = document.getElementById("menu-icon");
+        const menuIcon = menuButton.querySelector("i");
+
+        menuButton.addEventListener("click", function () {
+
+            sidebar.classList.toggle("active");
+
+            if (sidebar.classList.contains("active")) {
+
+                menuIcon.classList.remove("fa-bars");
+                menuIcon.classList.add("fa-xmark");
+
+            } else {
+
+                menuIcon.classList.remove("fa-xmark");
+                menuIcon.classList.add("fa-bars");
+
+            }
+
+        });
+
     </script>
+
 </body>
 </html>

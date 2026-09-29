@@ -1,19 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>Employee Login - Edusphere</title>
-    <link rel="stylesheet" href="../../assets/css/login.css">
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/login.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    >
 </head>
+
 <body>
-    <div>
-        <form action="/action.php">
-            <h1>Employee Login</h1>
-            <input type="text" id="username" placeholder="Enter your username" class="box" required> 
-            <input type="password" id="password" placeholder="Enter your password" class="box" required>
-            <button type="submit" formaction="../dashboards/employee_dashboard.html">LOGIN</button>
+
+    <div class="login-container">
+
+        <div class="login-brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <span>EDUSPHERE</span>
+        </div>
+
+        <div class="portal-label">
+            COLLEGE ERP PORTAL
+        </div>
+
+        <form>
+
+            <div class="form-header">
+
+                <div class="portal-icon employee-icon">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+
+                <h1>Employee Login</h1>
+
+                <p>
+                    Sign in to access your employee portal
+                </p>
+
+            </div>
+
+            <div class="input-group">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    class="box"
+                    placeholder="Enter your username"
+                    autocomplete="username"
+                    required
+                >
+
+            </div>
+
+            <div class="input-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    class="box"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+            <button
+                type="submit"
+                formaction="../dashboards/employee_dashboard.html"
+            >
+                LOGIN
+            </button>
+
         </form>
+
+        <div class="login-footer">
+            <span>Edusphere</span>
+            <span>•</span>
+            <span>College ERP Portal</span>
+        </div>
+
     </div>
+
 </body>
+
 </html>

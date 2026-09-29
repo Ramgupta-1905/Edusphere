@@ -3,259 +3,389 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sessional & Semester Results</title>
-    <style>
-        /* Global Styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f1f8fe; /* Soft light blue background */
-            margin: 0;
-            padding: 0;
-            color: #333;
-            display: flex;
-        }
+    <title>Results | Edusphere</title>
 
-        .container {
-            max-width: 900px;
-            margin-left: 280px;
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            flex-grow: 1;
-            transition: margin-left 0.3s ease-in-out;
-        }
-
-        h2 {
-            text-align: center;
-            color: #283593; /* Dark blue heading */
-            margin-bottom: 20px;
-        }
-
-        /* Table Styles */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        th, td {
-            padding: 15px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #3f51b5; /* Vibrant blue */
-            color: white;
-            font-weight: bold;
-        }
-
-        td {
-            background-color: #f9f9f9;
-            color: #444;
-        }
-
-        td:hover {
-            background-color: #f1f8fe;
-        }
-
-        /* Sidebar Styles */
-        .sidebar {
-            width: 250px;
-            height: 100vh;
-            background-color: #2196f3; /* Blue color */
-            position: fixed;
-            top: 0;
-            left: -250px;
-            transition: left 0.3s ease;
-            padding-top: 60px;
-            overflow-y: auto;
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .sidebar.active {
-            left: 0;
-        }
-
-        .sidebar a {
-            padding: 15px;
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            display: block;
-            margin: 5px 0;
-            transition: background 0.3s ease;
-            border-radius: 5px;
-        }
-
-        .sidebar a:hover {
-            background-color: #0288d1;
-        }
-
-        .menu-toggle {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            font-size: 30px;
-            color: #2196f3;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .menu-toggle:hover {
-            color: #0288d1;
-        }
-
-        /* Profile Header */
-        .profile-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            background-color: #3f51b5;
-            color: white;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-
-        .profile-header .name {
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .profile-header .details {
-            font-size: 14px;
-        }
-
-        .profile-header .details span {
-            margin-right: 15px;
-        }
-
-        /* Button Styling */
-        .button {
-            background-color: #3f51b5;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #283593;
-        }
-
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/results.css">
 </head>
+
 <body>
 
-<!-- Menu Toggle Button -->
-<button class="menu-toggle" onclick="toggleSidebar()">&#9776;</button>
+    <button class="menu-toggle" id="menu-icon" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
 
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-    <a href="../dashboards/student_dashboard.html">Back to Dashboard</a>
-    <a href="profile.html">Profile</a>
-    <a href="attendance.html">Attendance</a>
-    <a href="syllabus.html">Syllabus</a>
-    <a href="timetable.html">Timetable</a>
-    <a href="assignments.html">Assignments</a>
-    <a href="results.html">Results</a>
-    <a href="question_papers.html">Question Papers</a>
-    <a href="events.html">Events</a>
-    <a href="support.html">Support</a>
-    <a href="notifications.html">Notifications</a>
-    <a href="academic_calendar.html">Academic Calendar</a>
-    <a href="company_visit.html">Company Visits</a>
-    <a href="settings.html">Settings</a>
-</div>
+    <aside class="sidebar" id="sidebar">
 
-<!-- Main Content -->
-<div class="container">
-    <!-- Profile Header -->
-    <div class="profile-header">
-        <div class="name">RAM GUPTA</div>
-        <div class="details">
-            <span>Roll Number: 2300330120074</span>
-            <span>Branch: CS - B</span>
-            <span>Semester: 3rd</span>
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <span>Edusphere</span>
         </div>
-    </div>
 
-    <!-- Sessional Results -->
-    <h2>Sessional Test 1 Results</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Subject</th>
-                <th>Marks Obtained</th>
-                <th>Total Marks</th>
-                <th>Percentage</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>Mathematics</td><td>45</td><td>50</td><td>90%</td></tr>
-            <tr><td>Physics</td><td>40</td><td>50</td><td>80%</td></tr>
-            <tr><td>Chemistry</td><td>42</td><td>50</td><td>84%</td></tr>
-            <tr><td>Hindi</td><td>38</td><td>50</td><td>76%</td></tr>
-            <tr><td>English</td><td>44</td><td>50</td><td>88%</td></tr>
-            <tr><td><strong>Total</strong></td><td><strong>209</strong></td><td><strong>250</strong></td><td><strong>83.6%</strong></td></tr>
-        </tbody>
-    </table>
+        <nav class="sidebar-nav">
 
-    <h2>Sessional Test 2 Results</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Subject</th>
-                <th>Marks Obtained</th>
-                <th>Total Marks</th>
-                <th>Percentage</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>Mathematics</td><td>48</td><td>50</td><td>96%</td></tr>
-            <tr><td>Physics</td><td>42</td><td>50</td><td>84%</td></tr>
-            <tr><td>Chemistry</td><td>44</td><td>50</td><td>88%</td></tr>
-            <tr><td>Hindi</td><td>39</td><td>50</td><td>78%</td></tr>
-            <tr><td>English</td><td>47</td><td>50</td><td>94%</td></tr>
-            <tr><td><strong>Total</strong></td><td><strong>220</strong></td><td><strong>250</strong></td><td><strong>88%</strong></td></tr>
-        </tbody>
-    </table>
+            <a href="../dashboards/student_dashboard.html">
+                <i class="fas fa-house"></i>
+                <span>Dashboard</span>
+            </a>
 
-    <h2>PUT Result</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Subject</th>
-                <th>Marks Obtained</th>
-                <th>Total Marks</th>
-                <th>Percentage</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>Mathematics</td><td>65</td><td>70</td><td>92.9%</td></tr>
-            <tr><td>Physics</td><td>60</td><td>70</td><td>85.7%</td></tr>
-            <tr><td>Chemistry</td><td>62</td><td>70</td><td>88.6%</td></tr>
-            <tr><td>Hindi</td><td>55</td><td>70</td><td>78.6%</td></tr>
-            <tr><td>English</td><td>66</td><td>70</td><td>94.3%</td></tr>
-            <tr><td><strong>Total</strong></td><td><strong>308</strong></td><td><strong>350</strong></td><td><strong>88%</strong></td></tr>
-        </tbody>
-    </table>
-</div>
+            <a href="profile.html">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
 
-<script>
-    function toggleSidebar() {
-        const sidebar = document.getElementById("sidebar");
-        sidebar.classList.toggle("active");
-    }
-</script>
+            <a href="attendance.html">
+                <i class="fas fa-calendar-check"></i>
+                <span>Attendance</span>
+            </a>
+
+            <a href="syllabus.html">
+                <i class="fas fa-book"></i>
+                <span>Syllabus</span>
+            </a>
+
+            <a href="timetable.html">
+                <i class="fas fa-calendar-days"></i>
+                <span>Timetable</span>
+            </a>
+
+            <a href="assignments.html">
+                <i class="fas fa-file-pen"></i>
+                <span>Assignments</span>
+            </a>
+
+            <a href="results.html" class="active">
+                <i class="fas fa-chart-column"></i>
+                <span>Results</span>
+            </a>
+
+            <a href="question_papers.html">
+                <i class="fas fa-file-lines"></i>
+                <span>Question Papers</span>
+            </a>
+
+            <a href="events.html">
+                <i class="fas fa-calendar-star"></i>
+                <span>Events</span>
+            </a>
+
+            <a href="support.html">
+                <i class="fas fa-circle-question"></i>
+                <span>Support</span>
+            </a>
+
+            <a href="notifications.html">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+
+            <a href="academic_calendar.html">
+                <i class="fas fa-calendar"></i>
+                <span>Academic Calendar</span>
+            </a>
+
+            <a href="company_visit.html">
+                <i class="fas fa-building"></i>
+                <span>Company Visits</span>
+            </a>
+
+            <a href="settings.html">
+                <i class="fas fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <main class="main-content">
+
+        <div class="page-header">
+            <div>
+                <h1>Academic Results</h1>
+                <p>View your sessional and semester examination results.</p>
+            </div>
+        </div>
+
+        <div class="student-summary">
+
+            <div class="student-info">
+                <div class="student-avatar">
+                    RG
+                </div>
+
+                <div>
+                    <h2>Ram Gupta</h2>
+
+                    <div class="student-details">
+                        <span>
+                            <i class="fas fa-id-card"></i>
+                            Roll No: 2300330120074
+                        </span>
+
+                        <span>
+                            <i class="fas fa-code-branch"></i>
+                            CS - B
+                        </span>
+
+                        <span>
+                            <i class="fas fa-graduation-cap"></i>
+                            Semester: 3rd
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <section class="result-section">
+
+            <div class="section-header">
+                <div>
+                    <h2>Sessional Test 1</h2>
+                    <p>Performance in the first sessional examination.</p>
+                </div>
+
+                <div class="result-badge">
+                    83.6%
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Marks Obtained</th>
+                            <th>Total Marks</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Mathematics</td>
+                            <td>45</td>
+                            <td>50</td>
+                            <td>90%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Physics</td>
+                            <td>40</td>
+                            <td>50</td>
+                            <td>80%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Chemistry</td>
+                            <td>42</td>
+                            <td>50</td>
+                            <td>84%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Hindi</td>
+                            <td>38</td>
+                            <td>50</td>
+                            <td>76%</td>
+                        </tr>
+
+                        <tr>
+                            <td>English</td>
+                            <td>44</td>
+                            <td>50</td>
+                            <td>88%</td>
+                        </tr>
+
+                        <tr class="total-row">
+                            <td>Total</td>
+                            <td>209</td>
+                            <td>250</td>
+                            <td>83.6%</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+        </section>
+
+        <section class="result-section">
+
+            <div class="section-header">
+                <div>
+                    <h2>Sessional Test 2</h2>
+                    <p>Performance in the second sessional examination.</p>
+                </div>
+
+                <div class="result-badge">
+                    88%
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Marks Obtained</th>
+                            <th>Total Marks</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Mathematics</td>
+                            <td>48</td>
+                            <td>50</td>
+                            <td>96%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Physics</td>
+                            <td>42</td>
+                            <td>50</td>
+                            <td>84%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Chemistry</td>
+                            <td>44</td>
+                            <td>50</td>
+                            <td>88%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Hindi</td>
+                            <td>39</td>
+                            <td>50</td>
+                            <td>78%</td>
+                        </tr>
+
+                        <tr>
+                            <td>English</td>
+                            <td>47</td>
+                            <td>50</td>
+                            <td>94%</td>
+                        </tr>
+
+                        <tr class="total-row">
+                            <td>Total</td>
+                            <td>220</td>
+                            <td>250</td>
+                            <td>88%</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+        </section>
+
+        <section class="result-section">
+
+            <div class="section-header">
+                <div>
+                    <h2>PUT Result</h2>
+                    <p>Performance in the PUT examination.</p>
+                </div>
+
+                <div class="result-badge">
+                    88%
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Marks Obtained</th>
+                            <th>Total Marks</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Mathematics</td>
+                            <td>65</td>
+                            <td>70</td>
+                            <td>92.9%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Physics</td>
+                            <td>60</td>
+                            <td>70</td>
+                            <td>85.7%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Chemistry</td>
+                            <td>62</td>
+                            <td>70</td>
+                            <td>88.6%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Hindi</td>
+                            <td>55</td>
+                            <td>70</td>
+                            <td>78.6%</td>
+                        </tr>
+
+                        <tr>
+                            <td>English</td>
+                            <td>66</td>
+                            <td>70</td>
+                            <td>94.3%</td>
+                        </tr>
+
+                        <tr class="total-row">
+                            <td>Total</td>
+                            <td>308</td>
+                            <td>350</td>
+                            <td>88%</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const menuIcon = document.querySelector("#menu-icon i");
+
+            sidebar.classList.toggle("active");
+
+            if (sidebar.classList.contains("active")) {
+                menuIcon.classList.remove("fa-bars");
+                menuIcon.classList.add("fa-times");
+            } else {
+                menuIcon.classList.remove("fa-times");
+                menuIcon.classList.add("fa-bars");
+            }
+        }
+    </script>
 
 </body>
 </html>

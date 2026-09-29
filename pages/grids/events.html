@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Events | Edusphere</title>
+
+    <link rel="stylesheet" href="../../assets/css/events.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <button class="menu-toggle" id="menu-icon">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <span>Edusphere</span>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="../dashboards/student_dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="profile.html">
+                <i class="fa-regular fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="attendance.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Attendance</span>
+            </a>
+
+            <a href="syllabus.html">
+                <i class="fa-solid fa-book"></i>
+                <span>Syllabus</span>
+            </a>
+
+            <a href="timetable.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Timetable</span>
+            </a>
+
+            <a href="assignments.html">
+                <i class="fa-solid fa-list-check"></i>
+                <span>Assignments</span>
+            </a>
+
+            <a href="results.html">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Results</span>
+            </a>
+
+            <a href="question_papers.html">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Question Papers</span>
+            </a>
+
+            <a href="events.html" class="active">
+                <i class="fa-regular fa-calendar"></i>
+                <span>Events</span>
+            </a>
+
+            <a href="support.html">
+                <i class="fa-solid fa-headset"></i>
+                <span>Support</span>
+            </a>
+
+            <a href="notifications.html">
+                <i class="fa-regular fa-bell"></i>
+                <span>Notifications</span>
+            </a>
+
+            <a href="academic_calendar.html">
+                <i class="fa-solid fa-calendar-week"></i>
+                <span>Academic Calendar</span>
+            </a>
+
+            <a href="company_visit.html">
+                <i class="fa-solid fa-building"></i>
+                <span>Company Visits</span>
+            </a>
+
+            <a href="settings.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="page-header">
+
+            <div>
+                <p class="eyebrow">CAMPUS ACTIVITIES</p>
+
+                <h1>Events</h1>
+
+                <p class="page-description">
+                    Stay updated with upcoming college activities and events.
+                </p>
+            </div>
+
+            <div class="header-icon">
+                <i class="fa-regular fa-calendar"></i>
+            </div>
+
+        </header>
+
+
+        <section class="events-overview">
+
+            <div class="overview-card">
+
+                <div class="overview-icon blue">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+
+                <div>
+                    <span>Upcoming Events</span>
+                    <strong>6</strong>
+                </div>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <div class="overview-icon green">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+                    <span>Academic Events</span>
+                    <strong>3</strong>
+                </div>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <div class="overview-icon orange">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div>
+                    <span>Campus Activities</span>
+                    <strong>3</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="filter-card">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search events..."
+                >
+
+            </div>
+
+
+            <select id="categoryFilter">
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="academic">
+                    Academic
+                </option>
+
+                <option value="cultural">
+                    Cultural
+                </option>
+
+                <option value="sports">
+                    Sports
+                </option>
+
+                <option value="workshop">
+                    Workshop
+                </option>
+
+                <option value="seminar">
+                    Seminar
+                </option>
+
+            </select>
+
+
+            <select id="monthFilter">
+
+                <option value="all">
+                    All Months
+                </option>
+
+                <option value="february">
+                    February
+                </option>
+
+                <option value="march">
+                    March
+                </option>
+
+                <option value="april">
+                    April
+                </option>
+
+                <option value="may">
+                    May
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <section class="events-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Upcoming Events</h2>
+
+                    <p id="eventCount">
+                        6 events found
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="events-list" id="eventsList">
+
+
+                <article
+                    class="event-card"
+                    data-category="seminar"
+                    data-month="february"
+                    data-search="technical career seminar placement industry"
+                >
+
+                    <div class="event-date">
+
+                        <span>15</span>
+                        <small>FEB</small>
+
+                    </div>
+
+
+                    <div class="event-content">
+
+                        <div class="event-top">
+
+                            <span class="category-badge seminar">
+                                Seminar
+                            </span>
+
+                            <span class="event-status">
+                                Upcoming
+                            </span>
+
+                        </div>
+
+                        <h3>Technical Career Seminar</h3>
+
+                        <p>
+                            An interactive session focused on software careers,
+                            industry expectations, and placement preparation.
+                        </p>
+
+
+                        <div class="event-meta">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                10:00 AM - 12:00 PM
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Seminar Hall
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="details-button"
+                        onclick="showEvent('Technical Career Seminar')"
+                    >
+                        View Details
+                    </button>
+
+                </article>
+
+
+                <article
+                    class="event-card"
+                    data-category="workshop"
+                    data-month="february"
+                    data-search="web development workshop frontend javascript"
+                >
+
+                    <div class="event-date">
+
+                        <span>22</span>
+                        <small>FEB</small>
+
+                    </div>
+
+
+                    <div class="event-content">
+
+                        <div class="event-top">
+
+                            <span class="category-badge workshop">
+                                Workshop
+                            </span>
+
+                            <span class="event-status">
+                                Upcoming
+                            </span>
+
+                        </div>
+
+                        <h3>Web Development Workshop</h3>
+
+                        <p>
+                            Hands-on workshop covering modern frontend development
+                            and practical web development techniques.
+                        </p>
+
+
+                        <div class="event-meta">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                11:00 AM - 2:00 PM
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Computer Lab C3
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="details-button"
+                        onclick="showEvent('Web Development Workshop')"
+                    >
+                        View Details
+                    </button>
+
+                </article>
+
+
+                <article
+                    class="event-card"
+                    data-category="cultural"
+                    data-month="march"
+                    data-search="annual cultural fest college fest cultural"
+                >
+
+                    <div class="event-date">
+
+                        <span>08</span>
+                        <small>MAR</small>
+
+                    </div>
+
+
+                    <div class="event-content">
+
+                        <div class="event-top">
+
+                            <span class="category-badge cultural">
+                                Cultural
+                            </span>
+
+                            <span class="event-status">
+                                Upcoming
+                            </span>
+
+                        </div>
+
+                        <h3>Annual Cultural Fest</h3>
+
+                        <p>
+                            A campus celebration featuring music, dance, performances,
+                            competitions, and student activities.
+                        </p>
+
+
+                        <div class="event-meta">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                9:00 AM - 5:00 PM
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Main Auditorium
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="details-button"
+                        onclick="showEvent('Annual Cultural Fest')"
+                    >
+                        View Details
+                    </button>
+
+                </article>
+
+
+                <article
+                    class="event-card"
+                    data-category="sports"
+                    data-month="march"
+                    data-search="annual sports meet cricket football athletics"
+                >
+
+                    <div class="event-date">
+
+                        <span>18</span>
+                        <small>MAR</small>
+
+                    </div>
+
+
+                    <div class="event-content">
+
+                        <div class="event-top">
+
+                            <span class="category-badge sports">
+                                Sports
+                            </span>
+
+                            <span class="event-status">
+                                Upcoming
+                            </span>
+
+                        </div>
+
+                        <h3>Annual Sports Meet</h3>
+
+                        <p>
+                            Inter-department sports competitions including cricket,
+                            football, athletics, and indoor games.
+                        </p>
+
+
+                        <div class="event-meta">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                8:00 AM - 4:00 PM
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-location-dot"></i>
+                                College Sports Ground
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="details-button"
+                        onclick="showEvent('Annual Sports Meet')"
+                    >
+                        View Details
+                    </button>
+
+                </article>
+
+
+                <article
+                    class="event-card"
+                    data-category="academic"
+                    data-month="april"
+                    data-search="research paper presentation academic conference"
+                >
+
+                    <div class="event-date">
+
+                        <span>05</span>
+                        <small>APR</small>
+
+                    </div>
+
+
+                    <div class="event-content">
+
+                        <div class="event-top">
+
+                            <span class="category-badge academic">
+                                Academic
+                            </span>
+
+                            <span class="event-status">
+                                Upcoming
+                            </span>
+
+                        </div>
+
+                        <h3>Student Research Presentation</h3>
+
+                        <p>
+                            Students present their academic projects and research
+                            work to faculty members and fellow students.
+                        </p>
+
+
+                        <div class="event-meta">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                10:00 AM - 1:00 PM
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Conference Hall
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="details-button"
+                        onclick="showEvent('Student Research Presentation')"
+                    >
+                        View Details
+                    </button>
+
+                </article>
+
+
+                <article
+                    class="event-card"
+                    data-category="academic"
+                    data-month="may"
+                    data-search="project exhibition final year projects technology"
+                >
+
+                    <div class="event-date">
+
+                        <span>12</span>
+                        <small>MAY</small>
+
+                    </div>
+
+
+                    <div class="event-content">
+
+                        <div class="event-top">
+
+                            <span class="category-badge academic">
+                                Academic
+                            </span>
+
+                            <span class="event-status">
+                                Upcoming
+                            </span>
+
+                        </div>
+
+                        <h3>Student Project Exhibition</h3>
+
+                        <p>
+                            Students showcase their software, hardware, and academic
+                            projects to faculty members and visitors.
+                        </p>
+
+
+                        <div class="event-meta">
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                10:00 AM - 4:00 PM
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Main Building
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="details-button"
+                        onclick="showEvent('Student Project Exhibition')"
+                    >
+                        View Details
+                    </button>
+
+                </article>
+
+
+            </div>
+
+
+            <div class="empty-state" id="emptyState">
+
+                <div class="empty-icon">
+                    <i class="fa-regular fa-calendar-xmark"></i>
+                </div>
+
+                <h3>No events found</h3>
+
+                <p>
+                    Try changing your search or filter options.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        const sidebar = document.getElementById("sidebar");
+        const menuButton = document.getElementById("menu-icon");
+        const menuIcon = menuButton.querySelector("i");
+
+        menuButton.addEventListener("click", function () {
+
+            sidebar.classList.toggle("active");
+
+            if (sidebar.classList.contains("active")) {
+
+                menuIcon.classList.remove("fa-bars");
+                menuIcon.classList.add("fa-xmark");
+
+            } else {
+
+                menuIcon.classList.remove("fa-xmark");
+                menuIcon.classList.add("fa-bars");
+
+            }
+
+        });
+
+
+        const searchInput = document.getElementById("searchInput");
+        const categoryFilter = document.getElementById("categoryFilter");
+        const monthFilter = document.getElementById("monthFilter");
+        const eventCards = document.querySelectorAll(".event-card");
+        const eventCount = document.getElementById("eventCount");
+        const emptyState = document.getElementById("emptyState");
+
+
+        function filterEvents() {
+
+            const searchValue =
+                searchInput.value.toLowerCase().trim();
+
+            const categoryValue =
+                categoryFilter.value;
+
+            const monthValue =
+                monthFilter.value;
+
+            let visibleCount = 0;
+
+
+            eventCards.forEach(function (card) {
+
+                const searchData =
+                    card.dataset.search.toLowerCase();
+
+                const category =
+                    card.dataset.category;
+
+                const month =
+                    card.dataset.month;
+
+
+                const matchesSearch =
+                    searchData.includes(searchValue);
+
+                const matchesCategory =
+                    categoryValue === "all" ||
+                    category === categoryValue;
+
+                const matchesMonth =
+                    monthValue === "all" ||
+                    month === monthValue;
+
+
+                if (
+                    matchesSearch &&
+                    matchesCategory &&
+                    matchesMonth
+                ) {
+
+                    card.style.display = "flex";
+                    visibleCount++;
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+
+            eventCount.textContent =
+                visibleCount +
+                " event" +
+                (visibleCount === 1 ? "" : "s") +
+                " found";
+
+
+            if (visibleCount === 0) {
+
+                emptyState.style.display = "flex";
+
+            } else {
+
+                emptyState.style.display = "none";
+
+            }
+
+        }
+
+
+        searchInput.addEventListener("input", filterEvents);
+
+        categoryFilter.addEventListener("change", filterEvents);
+
+        monthFilter.addEventListener("change", filterEvents);
+
+
+        function showEvent(eventName) {
+
+            alert(
+                eventName +
+                " details will be available here after backend integration."
+            );
+
+        }
+
+    </script>
+
+</body>
+</html>
